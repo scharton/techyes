@@ -1,0 +1,21 @@
+{
+  "name": "ppbrew",
+  "version": "0.0.0",
+  "homepage": "https://github.com/scharton/ppbrew",
+  "dependencies": {
+    "angular": "~1.6.0",
+    "bootstrap": "~3.3.6",
+    "jquery": "~1.12.4"
+  },
+  "authors": [
+    "Derek Scharton <dscharton@financialengines.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
