@@ -1,1 +1,38 @@
-{"records":[{"id":"rec2JorYoZULzdgzd","fields":{"Name":"TBD","When":"2017-09-14T02:58:00.000Z"},"createdTime":"2017-09-07T20:40:48.000Z"},{"id":"recPZnXJ68bd4KmZw","fields":{"Name":"Eureka","When":"2017-09-08T00:30:00.000Z","Yes":["recnMgnInitBdtwAb","recVZX5HSzgjrXH6M"],"No":["recu0dFfCecT8qNhN"],"YeahNo":["recWBSciYaHCBLjIA"]},"createdTime":"2017-09-07T20:40:48.000Z"},{"id":"recsc0wLSfSXqC3OI","fields":{"Name":"Spokeasy","When":"2017-09-24T03:18:00.000Z"},"createdTime":"2017-09-07T20:40:48.000Z"}]}
+{
+  "records": [
+    {
+      "id": "rec2JorYoZULzdgzd",
+      "fields": {
+        "Name": "TBD",
+        "When": "2017-09-14T02:58:00.000Z"
+      },
+      "createdTime": "2017-09-07T20:40:48.000Z"
+    },
+    {
+      "id": "recPZnXJ68bd4KmZw",
+      "fields": {
+        "Name": "Eureka",
+        "When": "2017-09-08T00:30:00.000Z",
+        "Yes": [
+          "recnMgnInitBdtwAb",
+          "recVZX5HSzgjrXH6M"
+        ],
+        "No": [
+          "recu0dFfCecT8qNhN"
+        ],
+        "YeahNo": [
+          "recWBSciYaHCBLjIA"
+        ]
+      },
+      "createdTime": "2017-09-07T20:40:48.000Z"
+    },
+    {
+      "id": "recsc0wLSfSXqC3OI",
+      "fields": {
+        "Name": "Spokeasy",
+        "When": "2017-09-24T03:18:00.000Z"
+      },
+      "createdTime": "2017-09-07T20:40:48.000Z"
+    }
+  ]
+}

@@ -14,36 +14,20 @@
 <div class="container-fluid">
     <div class="row heading visible-sm visible-md visible-lg">
         <div class="pull-left">
-	{{main.headtitle}}
-        </div>
-    </div>
-    <div class="row heading visible-xs">
-        <div class="pull-left">
-	What is this?
+            {{main.headtitle}}
         </div>
     </div>
 
     <div class="row" style="display: flex; max-height: 100%; min-height: 100%;">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 section-contact">
-            <div class="info-contact">
-                <div class="row" ng-repeat="misfit in main.misfits">
-                    <div class="beer-notes">@{{misfit.fields["Slackr"]}}</div>
-                </div>
-                <div class="row" ng-repeat="mission in main.missions">
-                    <div class="beer-notes">@{{mission.fields["Slackr"]}}</div>
-                </div>
-                <!--<div class="row" ng-repeat="i in main.beermenu">-->
-                <!--<div class="col-xs-6 col-sm-6 col-md-6">{{i.item}}</div>-->
-                <!--<div class="col-xs-6 col-sm-6 col-md-6">{{i.alc}}</div>-->
-                <!--</div>-->
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1>Misfits</h1>
+            <div class="row">
+                <div ng-repeat="misfit in main.misfits" class="col-md-4">@{{misfit.fields["Slackr"]}}</div>
             </div>
-        </div>
-    </div>
-    <div class="row" style="display:none;">
-        <div ng-repeat="finditem in main.findus" class="col-xs-12 col-md-6 col-sm-6 col-lg-6 findus">
-            <div ng-if="finditem.fields['Show'] == true">
-                <div class="findusname">{{finditem.fields["Name"]}}</div>
-                <div class="shortloc">{{finditem.fields["When"]}}</div>
+            <h1>Missions</h1>
+            <div class="row" ng-repeat="mission2 in main.missions2">
+                <div class="col-md-4">{{mission2["name"]}}</div>
+                <div class="col-md-4">{{mission2["when"]}}</div>
             </div>
         </div>
     </div>
@@ -53,6 +37,8 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-moment/angular-moment.min.js"></script>
 <script src="app.js"></script>
 
 </body>
