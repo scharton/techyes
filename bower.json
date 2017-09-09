@@ -6,7 +6,7 @@
     "angular": "~1.6.0",
     "bootstrap": "~3.3.6",
     "jquery": "~1.12.4",
-    "angular-moment": "latest"
+    "angular-moment": "latest",
     "moment": "latest"
   },
   "license": "MIT",
