@@ -5,18 +5,14 @@
         var vm = this;
         vm.headtitle = 'TechYes!!'
 
-        var beerlist;
         $http.get('models/misfits.json').then(function(result){
             //$log.log(result.data.records);
-            beerlist = result.data.records;
-            vm.beers = beerlist;
+            vm.misfits = result.data.records;
         });
 
-        var findus;
         $http.get('models/missions.json').then(function(result){
             //$log.log(result.data.records);
-            findus = result.data.records;
-            vm.findus = findus;
+            vm.missions = result.data.records;
         });
 
     });
