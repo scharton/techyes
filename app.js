@@ -8,7 +8,7 @@
         vm.headtitle = 'TechYes!!'
         vm.timecheck = moment().hour(8).minute(0).second(0).toDate();
 
-
+	vm.misfits2 = [];
         $http.get('models/misfits.json').then(function(result){
             //$log.log(result.data.records);
             vm.misfits = result.data.records;
