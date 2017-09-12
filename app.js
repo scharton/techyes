@@ -8,7 +8,7 @@
         vm.headtitle = 'TechYes!!'
         vm.timecheck = moment().hour(8).minute(0).second(0).toDate();
 
-	vm.misfits2 = [];
+        vm.misfits = [];
         $http.get('models/misfits.json').then(function(result){
             //$log.log(result.data.records);
             vm.misfits = result.data.records;
@@ -18,10 +18,20 @@
         $http.get('models/missions.json').then(function(result){
             //$log.log(result.data.records);
             vm.missions = result.data.records;
+            var yesMisfits = [];
             angular.forEach(result.data.records, function(record){
                 var item = {};
                 item.name = record.fields["Name"];
                 item.when = moment(record.fields["When"]).format("MM/DD/YYYY HH:mm");
+                var yes = record.fields["Yes"];
+                angular.forEach(yes, function(record) {
+                    $log.log(record);
+                    $log.log(vm.misfits);
+                    // yesMisfits.push(vm.misfits.id[record]);
+                });
+
+                vm.yesMisfits = yesMisfits;
+
                 vm.missions2.push(item);
 
             })
