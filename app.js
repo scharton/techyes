@@ -9,33 +9,49 @@
         vm.timecheck = moment().hour(8).minute(0).second(0).toDate();
 
         vm.misfits = [];
+        vm.missions = [];
         $http.get('models/misfits.json').then(function(result){
+            var misfits = result.data.records;
             //$log.log(result.data.records);
-            vm.misfits = result.data.records;
-        });
-
-        vm.missions2 = [];
-        $http.get('models/missions.json').then(function(result){
-            //$log.log(result.data.records);
-            vm.missions = result.data.records;
-            var yesMisfits = [];
-            angular.forEach(result.data.records, function(record){
+            angular.forEach(result.data.records, function(misfit) {
                 var item = {};
-                item.name = record.fields.Name;
-                item.when = moment(record.fields.When).format("MM/DD/YYYY HH:mm");
-                item.yes = record.fields.Yes;
-              /*
-                angular.forEach(yes, function(record) {
-                    $log.log(record);
-                    $log.log(vm.misfits);
-                    // yesMisfits.push(vm.misfits.id[record]);
-                });
-            */
-                vm.yesMisfits = yesMisfits;
-
-                vm.missions2.push(item);
-
+                item.name = misfit.fields.Slackr;
+                // $log.log(item);
+                vm.misfits.push(item);
             })
+            // vm.misfits = result.data.records;
+            $http.get('models/missions.json').then(function(result) {
+                angular.forEach(result.data.records, function(mission) {
+                    var item = {};
+                    item.name = mission.fields.Name;
+                    item.when = moment(mission.fields.When).format("MM/DD/YYYY HH:mm");
+                    item.yes = [];
+                    angular.forEach(mission.fields.Yes, function(missionYes) {
+                        angular.forEach(misfits, function(misfit){
+                            if (misfit.id == missionYes) {
+                               item.yes.push(misfit.fields.Slackr);
+                            }
+                        });
+                    });
+                    item.no = [];
+                    angular.forEach(mission.fields.No, function(missionNo) {
+                        angular.forEach(misfits, function(misfit){
+                            if (misfit.id == missionNo) {
+                                item.no.push(misfit.fields.Slackr);
+                            }
+                        });
+                    });
+                    item.yeahno = [];
+                    angular.forEach(mission.fields.YeahNo, function(missionYeahNo) {
+                        angular.forEach(misfits, function(misfit){
+                            if (misfit.id == missionYeahNo) {
+                                item.yeahno.push(misfit.fields.Slackr);
+                            }
+                        });
+                    });
+                    vm.missions.push(item);
+                })
+            });
         });
 
     });
