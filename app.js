@@ -21,15 +21,16 @@
             var yesMisfits = [];
             angular.forEach(result.data.records, function(record){
                 var item = {};
-                item.name = record.fields["Name"];
-                item.when = moment(record.fields["When"]).format("MM/DD/YYYY HH:mm");
-                var yes = record.fields["Yes"];
+                item.name = record.fields.Name;
+                item.when = moment(record.fields.When).format("MM/DD/YYYY HH:mm");
+                item.yes = record.fields.Yes;
+              /*
                 angular.forEach(yes, function(record) {
                     $log.log(record);
                     $log.log(vm.misfits);
                     // yesMisfits.push(vm.misfits.id[record]);
                 });
-
+            */
                 vm.yesMisfits = yesMisfits;
 
                 vm.missions2.push(item);

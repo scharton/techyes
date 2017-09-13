@@ -26,8 +26,11 @@
             </div>
             <h1>Missions</h1>
             <div class="row" ng-repeat="mission2 in main.missions2">
-                <div class="col-md-4">{{mission2["name"]}}</div>
-                <div class="col-md-4">{{mission2["when"]}}</div>
+                <div class="col-md-4">{{mission2.name}}</div>
+                <div class="col-md-4">{{mission2.when}}</div>
+              <div class="row">
+              <div class="col-md-4" ng-repeat="yesitem in main.mission2.yes">{{mission2.yesitem}}</div>
+                </div>
                 <!--<div class="col-md-4">{{mission2["yes"]}}</div>-->
                 <!--<div class="col-md-4">{{mission2["no"]}}</div>-->
             </div>
